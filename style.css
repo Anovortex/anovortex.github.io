@@ -1,0 +1,317 @@
+:root{
+    --hls: #005B41;
+    --bg: #040D12;
+    --acc: #ECF117;
+    --fc1: #F4EEE0;
+    --fc2:#B2AEA4;
+    --progress-bar-color: #cfd8dc;
+  --progress-value-color: #2196f3;
+  --progress-empty-color-h: 4.1;
+  --progress-empty-color-s: 89.6;
+  --progress-empty-color-l: 58.4;
+  --progress-filled-color-h: 122.4;
+  --progress-filled-color-s: 39.4;
+  --progress-filled-color-l: 49.2;
+
+}
+/*---------------------------------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Lato";
+    box-sizing: border-box;
+
+}
+
+/*------------------------------------------------------*/
+html {
+    color:var(--fc1);
+    background:var(--bg);
+    scroll-behavior: smooth;
+   
+}
+/*----------------------NVA BAR--------------------------*/
+nav{
+    width: 100%;
+    height: auto;
+    background-color: var(--hls);
+    font-size: 22px;
+    display:inline-flex;
+    gap: 5rem;
+    padding-left: 8%;
+    text-align: center;
+    
+    
+}
+
+nav a{
+    padding: 2rem;
+    color: var(--fc1);
+    text-decoration: none;
+    flex-shrink: 0; 
+    background-color: transparent;
+    text-transform: capitalize;
+}
+
+nav a1{
+    padding: 2rem;
+    padding-left: 45%;
+    flex-shrink: 0;
+    padding-right: 10%;
+    
+    
+}
+nav a1:hover{
+    transition: 20ms;
+    color:var(--acc);
+}
+
+a1:hover{
+    transform: translate(-0px,-2px);
+}
+
+/*------------------HIRE ME----------------------------*/
+
+.button button{
+    margin-left: 9.8%;
+    width: 11rem;
+    height: 4rem;
+    background-color:var(--hls);
+    color: var(--fc1);
+    border-radius: 0.5rem;
+    font-size: 22px;
+    text-align: center;
+    
+    
+}
+
+.button button:hover{
+    color: #ECF117;
+     transform: translate(-0px,-2px);
+    box-shadow:  0 4px 8px 0 var(--acc), 0 3px 10px 0 var(--bg);
+}
+
+/*---------------HOME------------------------*/
+
+.home{
+    padding: 2rem 2rem 0 ;
+    flex-shrink: 0;
+    background-color: transparent;
+    display: flex;
+    gap: 51.5%;
+    font-size: 45px;
+    
+}
+
+.home #home{
+    font-size: 55px;
+    font-weight: 700;
+    padding-left: 8%;
+}
+
+.home .photo{
+    width: 366px;
+    height: 211px;
+  
+}
+/*------------------EDU SKILL PROGRESS BARS--------------------------*/
+
+.edu_skil{
+    display:flex;
+    gap: 50%;
+    padding: 2rem 10%  ;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.edu_skil #skills{
+    margin-left: 21%;
+}
+
+.details{
+    display: flex;
+    gap:50%;
+    padding: 0.2rem 11%;
+}
+
+.details #edu{
+    flex-shrink: 0;
+}
+
+.details #edu ul li{
+    padding-top: 5%;
+    padding-bottom: 4%;
+}
+
+.details #skill{
+    justify-content: space-evenly;
+    flex-shrink: 0;
+    margin-left: 7%;
+}
+
+.details #skill .class{
+    padding-top: 10%;
+}
+.details #skill .class .skill_seo{
+    padding-bottom: 10%;
+}
+.details #skill .class .skill_fsd{
+    padding-bottom: 10%;
+}
+.details #skill .class .skill_smm{
+    padding-bottom: 10%;
+}
+
+.details #skill .class .skill_ccna{
+    padding-bottom: 10%;
+}
+progress[value] {
+    display: block;
+    position: relative;
+    appearance: none;
+    width: 137%;
+    height: 10px;
+    border: 0;
+    border-radius: 30px;
+    --border-radius: var(--border-radius);
+    counter-reset: progress var(--progress-value);
+    --progress-value-string: counter(progress) '%';
+    --progress-max-decimal: calc(var(--value, 0) / var(--max, 0));
+    --progress-value-decimal: calc(var(--progress-value, 0) / var(--max, 0));
+    @supports selector(::-moz-progress-bar) {
+      --progress-value-decimal: calc(var(--value, 0) / var(--max, 0));
+    }
+    --progress-value-percent: calc(var(--progress-value-decimal) * 100%);
+    --progress-value-color: hsl(
+      calc((var(--progress-empty-color-h) + (var(--progress-filled-color-h) - var(--progress-empty-color-h)) * var(--progress-value-decimal)) * 1deg)
+      calc((var(--progress-empty-color-s) + (var(--progress-filled-color-s) - var(--progress-empty-color-s)) * var(--progress-value-decimal)) * 1%)
+      calc((var(--progress-empty-color-l) + (var(--progress-filled-color-l) - var(--progress-empty-color-l)) * var(--progress-value-decimal)) * 1%)
+    );
+    animation: calc(3s * var(--progress-max-decimal)) linear 0.5s 1 normal both progress;
+  }
+  
+  progress[value]::-webkit-progress-bar {
+    background-color: var(--progress-bar-color);
+    border-radius: 30px;
+    overflow: hidden;
+  }
+  
+  progress[value]::-webkit-progress-value {
+    width: var(--progress-value-percent) !important;
+    background-color: var(--progress-value-color);
+    border-radius: var(--border-radius);
+  }
+  
+  progress[value]::-moz-progress-bar {
+    width: var(--progress-value-percent) !important;
+    background-color: var(--progress-value-color);
+    border-radius: var(--border-radius);
+  }
+  
+  progress[value]::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --size: 32px;
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    left: var(--progress-value-percent);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--progress-value-color);
+    border-radius: 50%;
+    content: attr(value);
+    content: var(--progress-value-string, var(--value));
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  @keyframes progress {
+      from {
+          --progress-value: 0;
+      } to {
+          --progress-value: var(--value);
+      }
+  }
+
+/*------------------ABOUT----------------------------*/
+
+#about{
+    width:100%;
+    height: auto;
+    background: var(--hls);
+    text-align: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display:block;
+    justify-content: center;
+    color: var(--fc1);
+    margin-top: 7.5rem;
+}
+
+#about .am{
+    padding: 2rem 0 2rem 0;
+}
+
+#about .details{
+    text-align: justify;
+    font-size: 20px;
+    padding: 0 10%  2rem ;
+    text-shadow: #ECF117;
+    text-justify: newspaper;
+}
+/*-------------------FOOTER1-----------------*/
+.footer1{
+    width:100%;
+    height: auto;
+    text-align: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display:block;
+    justify-content: center;
+    color: var(--fc1);
+    margin-top: 7.5rem;
+    padding:2rem 0 0;
+}
+.footer1  h2{
+    padding-bottom: 2rem;
+}
+
+
+
+.footer1 .email{
+    
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    padding-right: 1%;
+    font-size: 1.5rem;
+}
+.footer1 .phone{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    padding-right: 1%;
+    font-family: "Lato";
+}
+
+.footer1 #contact{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 1.5rem;
+    gap: 2rem;
+    color: #B2AEA4;
+    transition: all 0.3s linear;
+}
+
+#contact:hover{
+    transform: scale(1.5);
+}
+
+
+
